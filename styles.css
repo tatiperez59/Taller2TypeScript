@@ -1,0 +1,35 @@
+.header-bar {
+  background-color: #26a0ad;
+  color: black;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.table-container {
+  margin-top: 20px;
+}
+
+.table a {
+  color: #007bff;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.table a:hover {
+  text-decoration: underline;
+}
+
+th {
+  font-weight: bold;
+}
+
+.average-text {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.table tbody tr:hover {
+  background-color: #f8f9fa;
+}
