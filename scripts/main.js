@@ -10,12 +10,20 @@ function displaySeries(series) {
             continue;
         let trElement = document.createElement("tr");
         trElement.innerHTML = `<td>${s.id}</td>
-                             <td><a href="${s.linkURL}" target="_blank">${s.nombre}</a></td>
+                             <td><a href="#" class="series-link" data-id="${s.id}">${s.nombre}</a></td>
                              <td>${s.canal}</td>
                              <td>${s.numSeasons}</td>`;
         bodyTabla.appendChild(trElement);
     }
     titulo.textContent = `${calcAverageSeasons(series).toFixed(2)}`;
+    const seriesLinks = document.querySelectorAll('.series-link');
+    seriesLinks.forEach(link => {
+        link.addEventListener('click', (event) => {
+            event.preventDefault();
+            const id = parseInt(event.target.getAttribute('data-id'));
+            displaySeriesDetail(series.find(s => s.id === id));
+        });
+    });
 }
 function clearTable(bodyTabla) {
     if (bodyTabla) {
@@ -33,7 +41,19 @@ function calcAverageSeasons(series) {
     }
     return total / series.length;
 }
+function displaySeriesDetail(serie) {
+    const detailDiv = document.getElementById('series-detail');
+    const image = document.getElementById('series-image');
+    const name = document.getElementById('series-name');
+    const description = document.getElementById('series-description');
+    const link = document.getElementById('series-link');
+    image.src = serie.imagenURL;
+    name.textContent = serie.nombre;
+    description.textContent = serie.descripcion;
+    link.href = serie.linkURL;
+    link.textContent = serie.linkURL;
+    detailDiv.style.display = 'block';
+}
 document.addEventListener('DOMContentLoaded', () => {
     displaySeries(series);
 });
-//# sourceMappingURL=main.js.map

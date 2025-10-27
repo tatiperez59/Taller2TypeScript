@@ -16,4 +16,3 @@ export class Serie {
         this.imagenURL = imag;
     }
 }
-//# sourceMappingURL=serie.js.map

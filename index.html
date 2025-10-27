@@ -16,20 +16,32 @@
     <h4 class="m-0">TV Series</h4>
   </div>
 
-  <div class="container table-container">
-    <table class="table table-striped">
-      <thead class="thead-light">
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Channel</th>
-          <th scope="col">Seasons</th>
-        </tr>
-      </thead>
-      <tbody id="series-body"></tbody>
-    </table>
+  <div class="container table-container d-flex">
+    <div class="flex-grow-1">
+      <table class="table table-striped">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name</th>
+            <th scope="col">Channel</th>
+            <th scope="col">Seasons</th>
+          </tr>
+        </thead>
+        <tbody id="series-body"></tbody>
+      </table>
 
-    <p class="average-text">Seasons average: <span id="avg-seasons">0</span></p>
+      <p class="average-text">Seasons average: <span id="avg-seasons">0</span></p>
+    </div>
+        <div class="ml-3" id="series-detail" style="display: none; width: 300px;">
+      <div class="card">
+        <img id="series-image" class="card-img-top" src="" alt="Series Image">
+        <div class="card-body">
+          <h5 class="card-title" id="series-name"></h5>
+          <p class="card-text" id="series-description"></p>
+          <a id="series-link" href="#" target="_blank"></a>
+        </div>
+      </div>
+    </div>
   </div>
 
   <script type="module" src="./scripts/serie.js"></script>
